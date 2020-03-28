@@ -1,0 +1,4 @@
+install knex sqlite3
+npx knex init => create a default file
+npx knex migrate:make <migration_name>
+npx knex migrate:latest => run migrations
