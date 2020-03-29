@@ -17,7 +17,7 @@ export default function Logon() {
     const login = async (ong_id) =>{
         try{
             const response = await api.post('/session', { id })
-            if(response.status == 204){
+            if(response.status === 204){
                 localStorage.setItem('ONG_ID', id)
                 localStorage.setItem('ONG_NAME', response.data.name)
                 history.push('/profile')
