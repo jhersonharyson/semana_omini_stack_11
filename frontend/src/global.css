@@ -44,3 +44,24 @@ form input {
     font-size: 18px;
     line-height: 60px;
 }
+
+
+.link-redirect {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    color: #41414d;
+    font-size: 18px;;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.link-redirect svg {
+    margin-right: 8px;
+}
+
+.link-redirect:hover {
+    opacity: 0.8;
+}
+
