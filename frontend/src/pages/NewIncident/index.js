@@ -12,19 +12,15 @@ export default function NewIncident() {
             <div className="content">
                 <section>
                     <img src={logoImage} alt="Be the hero"/>
-                    <h1>cadastro</h1>
-                    <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem os casos da sua ONG.</p>
-                    <Link className="link-redirect" to="/"><FiArrowLeft size={16} color="E02041"/>Voltar ao login</Link>
+                    <h1>Cadastro novo caso</h1>
+                    <p>Descreva o caso detalhadamente para encontrar um herói para resolver isso.</p>
+                    <Link className="link-redirect" to="/profile"><FiArrowLeft size={16} color="E02041"/>Voltar para home</Link>
                   
                 </section>
                 <form>
-                    <input placeholder="Nome da ONG" required />
-                    <input placeholder="Email" type="email" required/>
-                    <input placeholder="WhatsApp" required/>
-                    <div className="input-group">
-                        <input placeholder="Cidade" required/>
-                        <input placeholder="UF" required style={{width: "30px"}}/>
-                    </div>
+                    <input placeholder="Título do caso" required />
+                    <textarea placeholder="Descrição" type="email" required/>
+                    <input placeholder="Valor (R$)" required/>
                     <button className="button">Cadastrar</button> 
                 </form>
             </div>
