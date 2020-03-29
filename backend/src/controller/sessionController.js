@@ -6,5 +6,5 @@ exports.create = async (req, res) => {
 
     if(!ong)
         return res.status(400).send({error: 'No ONG found with this id.'})
-    return res.status(204).send({ong})
+    return res.status(200).send({ong})
 }

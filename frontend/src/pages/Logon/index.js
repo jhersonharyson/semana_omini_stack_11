@@ -14,12 +14,13 @@ export default function Logon() {
 
     const history = useHistory()
 
-    const login = async (ong_id) =>{
+    const login = async (id) =>{
         try{
             const response = await api.post('/session', { id })
-            if(response.status === 204){
+            if(response.status == 200){
                 localStorage.setItem('ONG_ID', id)
-                localStorage.setItem('ONG_NAME', response.data.name)
+                console.log(response.data)
+                localStorage.setItem('ONG_NAME', response.data.ong.name)
                 history.push('/profile')
             }
         }catch(e){
