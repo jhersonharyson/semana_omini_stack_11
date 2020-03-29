@@ -17,7 +17,7 @@ export default function Logon() {
     const login = async (id) =>{
         try{
             const response = await api.post('/session', { id })
-            if(response.status == 200){
+            if(response.status === 200){
                 localStorage.setItem('ONG_ID', id)
                 console.log(response.data)
                 localStorage.setItem('ONG_NAME', response.data.ong.name)
@@ -30,9 +30,22 @@ export default function Logon() {
 
     useEffect(()=>{
         const id = localStorage.getItem('ONG_ID')
+        const login = async (id) =>{
+            try{
+                const response = await api.post('/session', { id })
+                if(response.status === 200){
+                    localStorage.setItem('ONG_ID', id)
+                    console.log(response.data)
+                    localStorage.setItem('ONG_NAME', response.data.ong.name)
+                    history.push('/profile')
+                }
+            }catch(e){
+                alert('Erro ao tentar logar.')
+            }
+        }
         if(id)
-           login(id)
-    },[])
+            login(id)
+    }, [history])
 
     const handleSubmit = (event) =>{
         event.preventDefault()
